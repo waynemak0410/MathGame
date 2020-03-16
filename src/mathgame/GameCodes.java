@@ -30,13 +30,30 @@ public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
 public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+public static double getRandomumber(){
+    double x = Math.random();
+    return x; 
+}
+
+
+
 static void gameCode() {
+  //rules of the game 
     System.out.println("There is "+ANSI_PURPLE_BACKGROUND+"12"+ANSI_RESET+" random math questions\n" +"6 addition and/or subtraction\n"+ "6 multiplication and/or division\n"+"addition = 1 point\nsubtraction = 2 points\nmultiplication = 3 points\ndivision = 4 points\n\n" +"--------------------------\n"+ANSI_YELLOW+"click to continue\n"+ANSI_RESET);
+   
+    //scanner 
     Scanner scanner = new Scanner(System.in);
     
+    //Start game 
+    int anyThing = scanner.nextInt(); 
+    if (anyThing ==anyThing){
+        System.out.print("Starting game \n-------------------------");
+    }
+    //code 
     
     
     
+}
     
     
     
@@ -47,7 +64,7 @@ static void gameCode() {
 
 
 
-}
+
 
 
 

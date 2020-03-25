@@ -5,7 +5,11 @@
  */
 package mathgame;
 
+import java.util.Random;
 import java.util.Scanner;
+import javax.swing.text.html.HTML;
+import static jdk.nashorn.internal.objects.NativeFunction.function;
+import static jdk.nashorn.tools.ShellFunctions.input;
 
 /**
  *
@@ -30,27 +34,54 @@ public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
 public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-public static double getRandomumber(){
-    double x = Math.random();
-    return x; 
-}
-
-
 
 static void gameCode() {
-  //rules of the game 
-    System.out.println("There is "+ANSI_PURPLE_BACKGROUND+"12"+ANSI_RESET+" random math questions\n" +"6 addition and/or subtraction\n"+ "6 multiplication and/or division\n"+"addition = 1 point\nsubtraction = 2 points\nmultiplication = 3 points\ndivision = 4 points\n\n" +"--------------------------\n"+ANSI_YELLOW+"click to continue\n"+ANSI_RESET);
-   
+
     //scanner 
     Scanner scanner = new Scanner(System.in);
-    
     //Start game 
-    int anyThing = scanner.nextInt(); 
-    if (anyThing ==anyThing){
-        System.out.print("Starting game \n-------------------------");
-    }
-    //code 
-    
+    System.out.println("Please enter username");
+    String userName = scanner.nextLine();
+   
+    System.out.println("Hi"+userName);
+
+//game codes 
+int question = 1, userAnswer= 0,  plusOne=0, minusOne = 0; 
+int questionAnswer = 0;
+   Scanner keyboard = new Scanner(System.in);
+while(question <=3){
+     
+//random number generator 1
+int randomNumberOne = 0, randomNumberTwo = 0;
+double random = Math.random();
+    Random generator = new Random();
+int randomNumber1 = (int)(random*100)-50;
+   
+//random nymber generator 2
+double random2 = Math.random();
+int randomNumber2 = (int)(random2*100)-50;
+  
+   //questions    
+   System.out.printf("\nQuestion %d:  \n", question);
+       System.out.println(randomNumber1+" + "+randomNumber2);
+       questionAnswer = randomNumber1 + randomNumber2;
+       userAnswer = keyboard.nextInt();
+       if (userAnswer == questionAnswer){
+           System.out.println(ANSI_GREEN+"Correct      +1 point"+ANSI_RESET);
+           plusOne ++;
+       }
+       else{ 
+           System.out.println(ANSI_RED+"Incorrect       -1 point"+ANSI_RESET+"Answer is "+ANSI_PURPLE+questionAnswer+ANSI_RESET);
+           minusOne ++;
+       }
+ 
+       question++;
+   }
+   //end while 
+  
+   
+  
+}
     
     
 }
@@ -60,7 +91,7 @@ static void gameCode() {
     
     
     
-}
+
 
 
 

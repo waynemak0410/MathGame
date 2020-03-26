@@ -43,43 +43,80 @@ static void gameCode() {
     System.out.println("Please enter username");
     String userName = scanner.nextLine();
    
-    System.out.println("Hi"+userName);
+    System.out.println("Hi "+userName);
 
 //game codes 
-int question = 1, userAnswer= 0,  plusOne=0, minusOne = 0; 
-int questionAnswer = 0;
+int question = 1,  question2 =3, question3 =1, question4 =1; 
+int questionAnswer = 0, totalScore = 0, score = 0 ,userAnswer= 0,  plusOne=0, minusOne = 0;
+int q1Total = 0, q2Total = 0, q3Total = 0, q4Total = 0;
    Scanner keyboard = new Scanner(System.in);
+   
+   
+   
+//Aditions question x3    
 while(question <=3){
-     
 //random number generator 1
 int randomNumberOne = 0, randomNumberTwo = 0;
 double random = Math.random();
     Random generator = new Random();
 int randomNumber1 = (int)(random*100)-50;
-   
 //random nymber generator 2
 double random2 = Math.random();
 int randomNumber2 = (int)(random2*100)-50;
-  
-   //questions    
+//questions    
    System.out.printf("\nQuestion %d:  \n", question);
-       System.out.println(randomNumber1+" + "+randomNumber2);
+   System.out.println(randomNumber1+" + "+randomNumber2);
        questionAnswer = randomNumber1 + randomNumber2;
        userAnswer = keyboard.nextInt();
        if (userAnswer == questionAnswer){
-           System.out.println(ANSI_GREEN+"Correct      +1 point"+ANSI_RESET);
+           System.out.println(ANSI_GREEN+"Correct   +1 point"+ANSI_RESET);
            plusOne ++;
        }
        else{ 
-           System.out.println(ANSI_RED+"Incorrect       -1 point"+ANSI_RESET+"Answer is "+ANSI_PURPLE+questionAnswer+ANSI_RESET);
+           System.out.println(ANSI_RED+"Incorrect    -1 point\n"+ANSI_RESET+"Answer is "+ANSI_PURPLE+questionAnswer+ANSI_RESET);
            minusOne ++;
        }
- 
+ q1Total = plusOne - minusOne; 
        question++;
    }
    //end while 
   
    
+   
+   
+//subtractions question x3 
+while (question2 <=6){
+//random number generator 1
+int randomNumberOne = 0, randomNumberTwo = 0;
+double random = Math.random();
+        Random generator = new Random();
+int randomNumber1 = (int)(random*100)-50;
+//random nymber generator 2
+double random2 = Math.random();
+int randomNumber2 = (int)(random2*100)-50;
+//questions    
+   System.out.printf("\nQuestion %d:  \n", question);
+   System.out.println(randomNumber1+" - "+randomNumber2);
+       questionAnswer = randomNumber1 - randomNumber2;
+       userAnswer = keyboard.nextInt();
+       if (userAnswer == questionAnswer){
+           System.out.println(ANSI_GREEN+"Correct   +2 point"+ANSI_RESET);
+           plusOne ++;
+       }
+       else{ 
+           System.out.println(ANSI_RED+"Incorrect    -1 point\n"+ANSI_RESET+"Answer is "+ANSI_PURPLE+questionAnswer+ANSI_RESET);
+           minusOne ++;
+       }
+       q2Total = plusOne*2 - minusOne; 
+              question2 ++; 
+  }
+//end while 
+
+
+
+
+
+//Multiplication Question x 3 
   
 }
     

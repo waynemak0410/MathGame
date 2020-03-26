@@ -9,13 +9,13 @@ package mathgame;
  *
  * @author studentadmin
  */
-public class Player {
-   //Strings to store Players' name and score 
-    String arryOfPlayerName[] = new String[20];
-    String userName; 
-    String userScore; 
+public class Question {
+    String promt; 
+    String answer; 
     
+    public Question(String promt, String answer ){
+        this.promt = promt; 
+        this.answer = answer; 
+    }
     
-            
 }
-

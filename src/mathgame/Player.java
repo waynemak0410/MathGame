@@ -10,12 +10,10 @@ package mathgame;
  * @author studentadmin
  */
 public class Player {
-   //Strings to store Players' name and score 
-    String arryOfPlayerName[] = new String[20];
-    String userName; 
-    String userScore; 
-    
-    
-            
-}
+    //Strings to store Players' name and score 
 
+    String arryOfPlayerName[] = new String[20];
+    String userName;
+    String userScore;
+
+}

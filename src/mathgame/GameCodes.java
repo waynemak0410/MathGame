@@ -47,8 +47,8 @@ public class GameCodes {
 
 //game codes 
         int question = 1, question2 = 4, question3 = 7, question4 = 10;
-        int questionAnswer = 0, totalScore = 0, score = 0, userAnswer = 0, plusOne = 0, minusOne = 0;
-        int q1Total = 0, q2Total = 0, q3Total = 0, q4Total = 0;
+        int questionAnswer = 0, totalScore = 0, score = 0, userAnswer = 0, minusOne = 0,plusOne = 0,plusTwo = 0,plusThree = 0, plusFour = 0;
+
         Scanner keyboard = new Scanner(System.in);
 
 //Aditions question x3    
@@ -66,6 +66,8 @@ public class GameCodes {
             System.out.println(randomNumber1 + " + " + randomNumber2);
             questionAnswer = randomNumber1 + randomNumber2;
             userAnswer = keyboard.nextInt();
+           
+           
             if (userAnswer == questionAnswer) {
                 System.out.println(ANSI_GREEN + "Correct   +1 point" + ANSI_RESET);
                 plusOne++;
@@ -73,9 +75,11 @@ public class GameCodes {
                 System.out.println(ANSI_RED + "Incorrect    -1 point\n" + ANSI_RESET + "Answer is " + ANSI_PURPLE + questionAnswer + ANSI_RESET);
                 minusOne++;
             }
-            q1Total = plusOne - minusOne;
             question++;
+                       
+            
         }
+        
         //end while 
 
 //subtractions question x3 
@@ -93,15 +97,20 @@ public class GameCodes {
             System.out.println(randomNumber1 + " - " + randomNumber2);
             questionAnswer = randomNumber1 - randomNumber2;
             userAnswer = keyboard.nextInt();
+            
+           
             if (userAnswer == questionAnswer) {
                 System.out.println(ANSI_GREEN + "Correct   +2 point" + ANSI_RESET);
-                plusOne++;
+                plusTwo++;
             } else {
                 System.out.println(ANSI_RED + "Incorrect    -1 point\n" + ANSI_RESET + "Answer is " + ANSI_PURPLE + questionAnswer + ANSI_RESET);
                 minusOne++;
             }
-            q2Total = plusOne * 2 - minusOne;
             question2++;
+            
+            plusTwo = plusTwo*2; 
+         
+           
         }
 //end while 
 
@@ -121,15 +130,20 @@ public class GameCodes {
             System.out.println(randomNumber1 + " x " + randomNumber2);
             questionAnswer = randomNumber1 * randomNumber2;
             userAnswer = keyboard.nextInt();
+            
+           
             if (userAnswer == questionAnswer) {
-                System.out.println(ANSI_GREEN + "Correct   +1 point" + ANSI_RESET);
-                plusOne++;
+                System.out.println(ANSI_GREEN + "Correct   +3 point" + ANSI_RESET);
+                plusThree++;
             } else {
                 System.out.println(ANSI_RED + "Incorrect    -1 point\n" + ANSI_RESET + "Answer is " + ANSI_PURPLE + questionAnswer + ANSI_RESET);
                 minusOne++;
             }
-            q3Total = plusOne - minusOne;
             question3++;
+            
+            plusThree = plusThree *3;
+           
+            
         }
         //end while 
 
@@ -148,20 +162,24 @@ public class GameCodes {
             System.out.println(randomNumber1 + " / " + randomNumber2);
             questionAnswer = randomNumber1 / randomNumber2;
             userAnswer = keyboard.nextInt();
+           
             if (userAnswer == questionAnswer) {
-                System.out.println(ANSI_GREEN + "Correct   +1 point" + ANSI_RESET);
-                plusOne++;
+                System.out.println(ANSI_GREEN + "Correct   +4 point" + ANSI_RESET);
+                plusFour++;
             } else {
                 System.out.println(ANSI_RED + "Incorrect    -1 point\n" + ANSI_RESET + "Answer is " + ANSI_PURPLE + questionAnswer + ANSI_RESET);
                 minusOne++;
             }
-            q4Total = plusOne - minusOne;
             question4++;
+            
+            plusFour = plusFour *4;
+            
+            
             
             
              //end while 
         }
-        int finalScore = q1Total+q2Total+q3Total+q4Total; 
+        int finalScore = plusOne+plusTwo+plusThree+plusFour-minusOne; 
         System.out.println("Your final score is " + finalScore);
         
         
